@@ -1,3 +1,3 @@
 language: java
 
-script: ant main
+script: ant build
