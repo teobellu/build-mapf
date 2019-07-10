@@ -19,7 +19,7 @@ $ javaw.exe -jar build.jar
 
 You can also right-click the `build.jar` file, select <i>open with</i> and choose <i>Java Runtime Environment (JRE)</i>.
 
-Further reference: [Italian guide](https://www.aranzulla.it/come-aprire-file-jar-927218.html)
+Full reference: [Italian guide](https://www.aranzulla.it/come-aprire-file-jar-927218.html)
 
 ## Assumptions :memo:
 
