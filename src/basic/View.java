@@ -27,6 +27,8 @@ import javax.swing.JPanel;
  * 
  *   THIS CLASS IS NOT PART OF THE CORE
  *   
+ *   This class is used for 2D visualization
+ *   
  * 
  * 
  * 

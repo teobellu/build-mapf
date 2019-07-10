@@ -50,13 +50,13 @@ public class EPEA {
 	
 	private static Optional<Path> solver(int xStart, int yStart, int xGoal, int yGoal, int[] constraints) {
 		int i, j, t, xChild, yChild, gChild, hChild, gMin = 0;
-		EPEANodeSimple current;
+		EPEANode current;
 		Map map = mapfInstance.map;
 		
-		PriorityQueue<EPEANodeSimple> open = new PriorityQueue<EPEANodeSimple>();
-		HashSet<EPEANodeSimple> closed = new HashSet<EPEANodeSimple>();
+		PriorityQueue<EPEANode> open = new PriorityQueue<EPEANode>();
+		HashSet<EPEANode> closed = new HashSet<EPEANode>();
 		
-		EPEANodeSimple start = new EPEANodeSimple();
+		EPEANode start = new EPEANode();
 		start.g = 0;
 		start.h = distance(xStart, yStart, xGoal, yGoal);;
 		start.x = xStart;
@@ -120,7 +120,7 @@ public class EPEA {
 					}
 				
 					// child is found
-					EPEANodeSimple childNode = new EPEANodeSimple();
+					EPEANode childNode = new EPEANode();
 					childNode.g = gChild;
 					childNode.h = hChild;
 					childNode.x = xChild;
@@ -155,7 +155,7 @@ public class EPEA {
 
 }
 
-class EPEANodeSimple implements Comparable<EPEANodeSimple>{
+class EPEANode implements Comparable<EPEANode>{
 	
 	int g;
 	int h;
@@ -163,7 +163,7 @@ class EPEANodeSimple implements Comparable<EPEANodeSimple>{
 	int x;
 	int y;
 	
-	EPEANodeSimple father; // may not used in EPEA* for MDD
+	EPEANode father; // may not used in EPEA* for MDD
 	
 	public boolean canBeReInsert() {
 		return deltaf < 2;
@@ -178,7 +178,7 @@ class EPEANodeSimple implements Comparable<EPEANodeSimple>{
 	}
 	
 	@Override
-	public int compareTo(EPEANodeSimple aNode) {
+	public int compareTo(EPEANode aNode) {
 		switch(Integer.compare(g + h + deltaf, aNode.g + aNode.h + aNode.deltaf)) {
 			case -1: return -1;
 			case 1: return 1;
@@ -196,8 +196,8 @@ class EPEANodeSimple implements Comparable<EPEANodeSimple>{
 		if (this == anObject) {
             return true;
         }
-		if (anObject instanceof EPEANodeSimple) {
-			EPEANodeSimple aNode = (EPEANodeSimple)anObject;
+		if (anObject instanceof EPEANode) {
+			EPEANode aNode = (EPEANode)anObject;
             return 
             	x == aNode.x && 
             	y == aNode.y && 
