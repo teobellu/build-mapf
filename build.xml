@@ -12,7 +12,7 @@
     <path id="build-mapf.classpath">
         <pathelement location="bin"/>
     </path>
-    <path id="run.Start (32).classpath">
+    <path id="run.Start.classpath">
         <path refid="build-mapf.classpath"/>
     </path>
     <target name="init">
@@ -52,9 +52,9 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
-    <target name="Start (32)">
+    <target name="Start">
         <java classname="basic.Start" failonerror="true" fork="yes">
-            <classpath refid="run.Start (32).classpath"/>
+            <classpath refid="run.Start.classpath"/>
         </java>
     </target>
 </project>
