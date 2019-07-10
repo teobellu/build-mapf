@@ -25,6 +25,6 @@ Further reference: [Italian guide](https://www.aranzulla.it/come-aprire-file-jar
 
 The solver is based on two assumptions:
 
-* swap actions are allowed, hence there are no edge collision; 
+* swap actions are allowed, hence there are no edge collisions; 
 
 * wait actions on the goal have a unitary cost.
