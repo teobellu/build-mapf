@@ -1,4 +1,4 @@
-project>
+<project>
 
     <target name="clean">
         <delete dir="build"/>
