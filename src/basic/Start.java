@@ -1,14 +1,8 @@
 package basic;
 
-import view.View;
-
-public class Main {
+public class Start {
 	
 	public static void main(String[] args) {
-		presentation();
-	}
-	
-	private static void presentation() {
 		Map map = new Map(20, 11);
 		
 		map.freeAll();
