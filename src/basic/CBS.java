@@ -71,10 +71,10 @@ public class CBS {
 	private static Optional<CBSNode> generateChild(CBSNode father, int[] conflict, int agent) {
 		var child = new CBSNode(father);
 		
-		// add the new conflict
+		// add the new constraints
 		child.setConstraint(father, agent, conflict);
 
-		// get all the conflicts
+		// get all the constraints
 		var constraints = child.getConstraints(agent);
 		
 		// compute the new path
@@ -173,7 +173,8 @@ class CBSConstraintLink {
 		var link = this;
 		for (; link != null; link = link.father) {
 			if (link.agent == agent) {
-				tMin = Math.max(tMin, link.t);
+				// constraint at time t implies path of length at least t+1
+				tMin = Math.max(tMin, link.t + 1);
 				size++;
 			}
 		}
